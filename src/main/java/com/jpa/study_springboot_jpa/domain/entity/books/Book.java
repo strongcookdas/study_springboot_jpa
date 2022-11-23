@@ -2,10 +2,7 @@ package com.jpa.study_springboot_jpa.domain.entity.books;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -14,7 +11,10 @@ public class Book {
     private Integer id;
 
     private String name;
-    private Integer publisherId;
+
+    @OneToOne
+    @JoinColumn(name = "publisher_id")
+    private Publisher publisher;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
