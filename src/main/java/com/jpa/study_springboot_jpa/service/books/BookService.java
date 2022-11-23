@@ -23,8 +23,7 @@ public class BookService {
         List<Book> books = bookRepository.findAll();
         List<BooksResponse> list = new ArrayList<>();
         for (Book book: books) {
-            Optional<Author> optionalAuthor = authorRepository.findById(book.getAuthorId());
-            BooksResponse booksResponse = BooksResponse.of(book.getId(), book.getName(),optionalAuthor.get().getName());
+            BooksResponse booksResponse = BooksResponse.of(book.getId(), book.getName(),book.getAuthor().getName());
             list.add(booksResponse);
         }
         return list;
