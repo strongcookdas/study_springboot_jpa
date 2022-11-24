@@ -29,7 +29,8 @@ public class HospitalService {
         Optional<Hospital> optionalHospital = hospitalRepository.findById(id);
         HospitalResponse hospitalResponse = null;
         if(!optionalHospital.isEmpty()){
-            hospitalResponse = HospitalResponse.of(optionalHospital.get().getId(),optionalHospital.get().getHospitalName(),optionalHospital.get().getRoadNameAddress());
+            Hospital hospital = optionalHospital.get();
+            hospitalResponse = HospitalResponse.of(hospital.getId(),hospital.getHospitalName(),hospital.getRoadNameAddress(),hospital.getReviews());
         }
         return hospitalResponse;
     }

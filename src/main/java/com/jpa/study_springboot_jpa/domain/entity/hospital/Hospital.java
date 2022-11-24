@@ -2,9 +2,8 @@ package com.jpa.study_springboot_jpa.domain.entity.hospital;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "nation_wide_hospitals")
@@ -16,4 +15,6 @@ public class Hospital {
     private String hospitalName;
     private String roadNameAddress;
 
+    @OneToMany(mappedBy = "hospital", fetch = FetchType.LAZY)
+    private List<Review> reviews;
 }
