@@ -16,3 +16,6 @@ spring:
     database: mysql
     hibernate:
       ddl-auto: validate
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
