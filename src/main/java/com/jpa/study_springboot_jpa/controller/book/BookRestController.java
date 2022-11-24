@@ -1,4 +1,4 @@
-package com.jpa.study_springboot_jpa.controller;
+package com.jpa.study_springboot_jpa.controller.book;
 
 import com.jpa.study_springboot_jpa.domain.dto.books.BooksResponse;
 import com.jpa.study_springboot_jpa.service.books.BookService;
