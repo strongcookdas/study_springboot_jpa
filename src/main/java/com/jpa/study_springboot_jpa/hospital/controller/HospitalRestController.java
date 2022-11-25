@@ -32,7 +32,7 @@ public class HospitalRestController {
         return ResponseEntity.ok().body(hospitalService.getHospitalPage(id));
     }
 
-    @GetMapping("/{id}/reviews")
+    @GetMapping("/{id}/review")
     public ResponseEntity<List<ReviewResponse>> hospitalReviewsPage(@PathVariable Integer id){
         return ResponseEntity.ok().body(reviewService.getReviewsPage(id));
     }
